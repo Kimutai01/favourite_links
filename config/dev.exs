@@ -29,6 +29,18 @@ config :favourite_links, FavouriteLinksWeb.Endpoint,
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
   ]
 
+
+
+config :favourite_links, :phoenix_swagger,
+  swagger_files: %{
+    "priv/static/swagger.json" => [
+      router: FavouriteLinksWeb.Router,
+      endpoint: FavouriteLinksWeb.Endpoint
+    ]
+  }
+
+config :phoenix_swagger, json_library: Jason
+
 # ## SSL Support
 #
 # In order to use HTTPS in development, a self-signed

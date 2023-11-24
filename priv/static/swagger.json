@@ -1,0 +1,42 @@
+{
+  "info": {
+    "version": "1.0",
+    "description": "API Documentation for FavouriteLinks",
+    "title": "FavouriteLinks API",
+    "termsOfService": "Open for public",
+    "contact": {
+      "name": "Kiprotich Kimutai",
+      "email": "kiprotichkimutai01@gmail.com"
+    }
+  },
+  "host": "localhost:4000",
+  "definitions": {},
+  "schemes": [
+    "http",
+    "https",
+    "ws",
+    "wss"
+  ],
+  "paths": {},
+  "swagger": "2.0",
+  "securityDefinitions": {
+    "Bearer": {
+      "in": "header",
+      "name": "Authorization",
+      "type": "apiKey",
+      "description": "API Token must be provided via `Authorization: Bearer ` header"
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "tags": [
+    {
+      "name": "Urls",
+      "description": "Operations about Urls"
+    }
+  ]
+}

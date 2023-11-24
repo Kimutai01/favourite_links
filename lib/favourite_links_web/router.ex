@@ -16,6 +16,36 @@ defmodule FavouriteLinksWeb.Router do
 
   end
 
+  def swagger_info do
+    %{
+      schemes: ["http", "https", "ws", "wss"],
+      info: %{
+        version: "1.0",
+        title: "FavouriteLinks API",
+        description: "API Documentation for FavouriteLinks",
+        termsOfService: "Open for public",
+        contact: %{
+          name: "Kiprotich Kimutai",
+          email: "kiprotichkimutai01@gmail.com"
+        }
+      },
+      securityDefinitions: %{
+        Bearer: %{
+          type: "apiKey",
+          name: "Authorization",
+          description:
+          "API Token must be provided via `Authorization: Bearer ` header",
+      in: "header"
+        }
+      },
+      consumes: ["application/json"],
+      produces: ["application/json"],
+      tags: [
+        %{name: "Urls", description: "Operations about Urls"},
+      ]
+    }
+  end
+
   scope "/", FavouriteLinksWeb do
     pipe_through :browser
 
