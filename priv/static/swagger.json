@@ -17,8 +17,81 @@
     "ws",
     "wss"
   ],
-  "paths": {},
+  "paths": {
+    "/urls": {
+      "get": {
+        "description": "List of all URLs",
+        "operationId": "FavouriteLinksWeb.UrlController.index",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Url"
+        ]
+      },
+      "post": {
+        "description": "Create a new URL",
+        "operationId": "FavouriteLinksWeb.UrlController.create",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Url"
+        ]
+      }
+    },
+    "/urls/{id}": {
+      "get": {
+        "description": "Show a URL",
+        "operationId": "FavouriteLinksWeb.UrlController.show",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Url"
+        ]
+      },
+      "put": {
+        "description": "Update a URL",
+        "operationId": "FavouriteLinksWeb.UrlController.update",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Url"
+        ]
+      }
+    }
+  },
   "swagger": "2.0",
+  "tags": [
+    {
+      "name": "Urls",
+      "description": "Operations about Urls"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
   "securityDefinitions": {
     "Bearer": {
       "in": "header",
@@ -26,17 +99,5 @@
       "type": "apiKey",
       "description": "API Token must be provided via `Authorization: Bearer ` header"
     }
-  },
-  "consumes": [
-    "application/json"
-  ],
-  "produces": [
-    "application/json"
-  ],
-  "tags": [
-    {
-      "name": "Urls",
-      "description": "Operations about Urls"
-    }
-  ]
+  }
 }

@@ -17,6 +17,10 @@ config :favourite_links, FavouriteLinksWeb.Endpoint,
   pubsub_server: FavouriteLinks.PubSub,
   live_view: [signing_salt: "YsRZW68/"]
 
+
+config :favourite_links, FavouriteLinksWeb.Endpoint,
+  url: [host: "localhost"]
+
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails

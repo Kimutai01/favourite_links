@@ -1,6 +1,7 @@
 defmodule FavouriteLinksWeb.Router do
   use FavouriteLinksWeb, :router
 
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -15,6 +16,12 @@ defmodule FavouriteLinksWeb.Router do
 
 
   end
+
+  scope "/api/swagger" do
+  forward "/", PhoenixSwagger.Plug.SwaggerUI,
+    otp_app: :favourite_links,
+    swagger_file: "swagger.json"
+end
 
   def swagger_info do
     %{
@@ -56,8 +63,9 @@ defmodule FavouriteLinksWeb.Router do
   # Other scopes may use custom stacks.
   scope "/api", FavouriteLinksWeb do
     pipe_through :api
-    resources "/urls", UrlController, except: [:new, :edit]
+    resources "/urls", UrlController, only: [:index, :create, :show, :update, :delete]
   end
+
 
   # Enables LiveDashboard only for development
   #
